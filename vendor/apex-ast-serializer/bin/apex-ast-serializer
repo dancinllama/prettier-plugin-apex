@@ -79,6 +79,7 @@ if [ -n "$JAVA_HOME" ] ; then
         echo "JAVACMD: $JAVACMD"
         ls -laR "$JAVACMD"
     fi
+    echo "JAVACMD2: $JAVACMD"
     if [ ! -x "$JAVACMD" ] ; then
         die "ERROR 123: JAVA_HOME is set to an invalid directory: $JAVA_HOME
 
