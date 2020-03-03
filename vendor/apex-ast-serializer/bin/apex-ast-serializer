@@ -78,6 +78,8 @@ if [ -n "$JAVA_HOME" ] ; then
         JAVACMD="$JAVA_HOME/bin/java"
         echo "JAVACMD: $JAVACMD"
         echo "TEST1"
+        ls -laR /opt/hostedtoolcache/jdk/11.0.6/x64 > echo "TEST02" && echo "TEST03" || echo "TEST04"
+        ls -laR "$JAVA_HOME" > echo "TEST002" && echo "TEST003" || echo "TEST004"
         ls -laR "$JAVACMD" > echo "TEST2" && echo "TEST3" || echo "TEST4"
         echo "TEST5"
     fi
