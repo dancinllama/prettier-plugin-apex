@@ -77,7 +77,9 @@ if [ -n "$JAVA_HOME" ] ; then
     else
         JAVACMD="$JAVA_HOME/bin/java"
         echo "JAVACMD: $JAVACMD"
-        ls -laR "$JAVACMD"
+        echo "TEST1"
+        ls -laR "$JAVACMD" > echo "TEST2" && echo "TEST3" || echo "TEST4"
+        echo "TEST5"
     fi
     echo "JAVACMD2: $JAVACMD"
     if [-x "$JAVACMD" ] ; then
