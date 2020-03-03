@@ -69,38 +69,37 @@ esac
 CLASSPATH=$APP_HOME/lib/apex-ast-serializer-1.0-SNAPSHOT.jar:$APP_HOME/lib/apex-jorje-lsp.jar:$APP_HOME/lib/xstream-1.4.11.1.jar:$APP_HOME/lib/jaxb-api-2.3.1.jar:$APP_HOME/lib/slf4j-simple-1.7.30.jar:$APP_HOME/lib/slf4j-api-1.7.30.jar:$APP_HOME/lib/jersey-container-jetty-http-2.30.1.jar:$APP_HOME/lib/jetty-servlet-9.4.26.v20200117.jar:$APP_HOME/lib/jetty-security-9.4.26.v20200117.jar:$APP_HOME/lib/jetty-server-9.4.26.v20200117.jar:$APP_HOME/lib/jersey-container-servlet-core-2.30.1.jar:$APP_HOME/lib/jersey-server-2.30.1.jar:$APP_HOME/lib/jersey-media-json-jackson-2.30.1.jar:$APP_HOME/lib/jersey-hk2-2.30.1.jar:$APP_HOME/lib/commons-cli-1.4.jar:$APP_HOME/lib/commons-io-2.6.jar:$APP_HOME/lib/xmlpull-1.1.3.1.jar:$APP_HOME/lib/xpp3_min-1.1.4c.jar:$APP_HOME/lib/javax.activation-api-1.2.0.jar:$APP_HOME/lib/javax.servlet-api-3.1.0.jar:$APP_HOME/lib/jetty-http-9.4.26.v20200117.jar:$APP_HOME/lib/jetty-io-9.4.26.v20200117.jar:$APP_HOME/lib/jersey-client-2.30.1.jar:$APP_HOME/lib/jersey-media-jaxb-2.30.1.jar:$APP_HOME/lib/jersey-common-2.30.1.jar:$APP_HOME/lib/jersey-entity-filtering-2.30.1.jar:$APP_HOME/lib/jakarta.ws.rs-api-2.1.6.jar:$APP_HOME/lib/jakarta.annotation-api-1.3.5.jar:$APP_HOME/lib/hk2-locator-2.6.1.jar:$APP_HOME/lib/hk2-api-2.6.1.jar:$APP_HOME/lib/hk2-utils-2.6.1.jar:$APP_HOME/lib/jakarta.inject-2.6.1.jar:$APP_HOME/lib/jakarta.validation-api-2.0.2.jar:$APP_HOME/lib/jetty-util-9.4.26.v20200117.jar:$APP_HOME/lib/jetty-continuation-9.4.17.v20190418.jar:$APP_HOME/lib/jackson-module-jaxb-annotations-2.10.1.jar:$APP_HOME/lib/jackson-databind-2.10.1.jar:$APP_HOME/lib/jackson-annotations-2.10.1.jar:$APP_HOME/lib/javassist-3.25.0-GA.jar:$APP_HOME/lib/osgi-resource-locator-1.0.3.jar:$APP_HOME/lib/jackson-core-2.10.1.jar:$APP_HOME/lib/jakarta.xml.bind-api-2.3.2.jar:$APP_HOME/lib/jakarta.activation-api-1.2.1.jar:$APP_HOME/lib/aopalliance-repackaged-2.6.1.jar
 
 # Determine the Java command to use to start the JVM.
-if [ -n "$JAVA_HOME" ] ; then
-    if [ -x "$JAVA_HOME/jre/sh/java" ] ; then
-        # IBM's JDK on AIX uses strange locations for the executables
-        JAVACMD="$JAVA_HOME/jre/sh/java"
-        echo "JAVACMD: $JAVACMD"
-    else
-        JAVACMD="$JAVA_HOME/bin/java"
-        echo "JAVACMD: $JAVACMD"
-        echo "TEST1"
-        ls -la /opt > echo "TEST00002" && echo "TEST00003" || echo "TEST000004"
-        ls -la /opt/hostedtoolcache > echo "TEST123" && echo "TEST245" || echo "TEST345"
-        ls -la /opt/hostedtoolcache/jdk > echo "TEST246" && echo "TEST345" || echo "TEST456"
-        ls -laR /opt/hostedtoolcache/jdk/11.0.6 > echo "TESTabc" && echo "TESTdef" || echo "TESTghi"
-        ls -laR /opt/hostedtoolcache/jdk/11.0.6/x64 > echo "TEST02" && echo "TEST03" || echo "TEST04"
-        ls -laR /opt/hostedtoolcache/jdk/11.0.6/x64 > echo "TEST02" && echo "TEST03" || echo "TEST04"
-        ls -laR "$JAVA_HOME" > echo "TEST002" && echo "TEST003" || echo "TEST004"
-        ls -laR "$JAVACMD" > echo "TEST2" && echo "TEST3" || echo "TEST4"
-        echo "TEST5"
-    fi
-    echo "JAVACMD2: $JAVACMD"
-    if [-x "$JAVACMD" ] ; then
-        echo "HUZZAH!!"
-    else
-        echo "AWWW... FIDDLE STICKS"
-    fi
-else
-    JAVACMD="java"
-    which java >/dev/null 2>&1 || die "ERROR: JAVA_HOME is not set and no 'java' command could be found in your PATH.
-
-Please set the JAVA_HOME variable in your environment to match the
-location of your Java installation."
-fi
+#if [ -n "$JAVA_HOME" ] ; then
+#    if [ -x "$JAVA_HOME/jre/sh/java" ] ; then
+##        # IBM's JDK on AIX uses strange locations for the executables
+#        JAVACMD="$JAVA_HOME/jre/sh/java"
+#        echo "JAVACMD: $JAVACMD"
+#    else
+#       JAVACMD="$JAVA_HOME/bin/java"
+#        echo "JAVACMD: $JAVACMD"
+#        echo "TEST1"
+###      ls -la /opt/hostedtoolcache > echo "TEST123" && echo "TEST245" || echo "TEST345"
+#        ls -la /opt/hostedtoolcache/jdk > echo "TEST246" && echo "TEST345" || echo "TEST456"
+#        ls -laR /opt/hostedtoolcache/jdk/11.0.6 > echo "TESTabc" && echo "TESTdef" || echo "TESTghi"
+##        ls -laR /opt/hostedtoolcache/jdk/11.0.6/x64 > echo "TEST02" && echo "TEST03" || echo "TEST04"
+ #       ls -laR /opt/hostedtoolcache/jdk/11.0.6/x64 > echo "TEST02" && echo "TEST03" || echo "TEST04"
+ #       ls -laR "$JAVA_HOME" > echo "TEST002" && echo "TEST003" || echo "TEST004"
+ #       ls -laR "$JAVACMD" > echo "TEST2" && echo "TEST3" || echo "TEST4"
+ #       echo "TEST5"
+ #   fi
+ #   echo "JAVACMD2: $JAVACMD"
+ #   if [-x "$JAVACMD" ] ; then
+ #       echo "HUZZAH!!"
+ ##   else
+  #      echo "AWWW... FIDDLE STICKS"
+  #  fi
+#else
+ #   JAVACMD="java"
+ #   which java >/dev/null 2>&1 || die "ERROR: JAVA_HOME is not set and no 'java' command could be found in your PATH.
+#
+##Please set the JAVA_HOME variable in your environment to match the
+#location of your Java installation."
+#fi
 
 # Increase the maximum file descriptors if we can.
 if [ "$cygwin" = "false" -a "$darwin" = "false" -a "$nonstop" = "false" ] ; then
@@ -183,4 +182,4 @@ if [ "$(uname)" = "Darwin" ] && [ "$HOME" = "$PWD" ]; then
   cd "$(dirname "$0")"
 fi
 
-exec "$JAVACMD" "$@"
+exec java "$@"
